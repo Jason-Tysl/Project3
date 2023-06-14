@@ -17,6 +17,7 @@ class Assign implements Stmt {
 		type = 0;
 		assignTo = new Id();
 		assignTo.parse();
+		
 		if (Parser.scanner.currentToken() == Core.LBRACE) {
 			type = 1;
 			Parser.scanner.nextToken();

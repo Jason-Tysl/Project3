@@ -35,4 +35,18 @@ class Procedure {
 		ss.print(1);
 		System.out.println("end");
 	}
+
+	public void execute() {
+		// Do something to initialize the memory
+		Executor.initializeMemory();
+
+		// Execute the declaration sequence
+		if (ds != null) {
+			ds.execute();
+		}
+		Memory.localMemory.push(new HashMap<String, Core>());
+		ss.execute();
+		Memory.localMemory.pop();
+
+	}
 }

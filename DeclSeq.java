@@ -17,4 +17,7 @@ class DeclSeq {
 			ds.print(indent);
 		}
 	}
+
+    public void execute() {
+    }
 }

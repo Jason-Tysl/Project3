@@ -1,13 +1,20 @@
 class Main {
 	public static void main(String[] args) {
-		// Initialize the scanner with the input file
-		Scanner S = new Scanner(args[0]);
-		Parser.scanner = S;
+		// Initialize two scanners: one for the parser (.code) and another for the executor (.data)
+		Scanner parserScanner = new Scanner(args[0]);
+		Scanner executorScanner = new Scanner(args[1]);
 		
-		Procedure p = new Procedure();
+		// give the parser and executer their scanner
+		Parser.scanner = parserScanner;
+		Executor.scanner = executorScanner;
 		
-		p.parse();
+		Procedure procedure = new Procedure();
 		
-		p.print();
+		procedure.parse();
+
+		procedure.execute();
+		
+		// no need to print any more, leftover from parser
+		// procedure.print();
 	}
 }

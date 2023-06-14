@@ -30,4 +30,7 @@ class StmtSeq {
 			ss.print(indent);
 		}
 	}
+
+    public void execute() {
+    }
 }
