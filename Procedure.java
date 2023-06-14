@@ -44,7 +44,7 @@ class Procedure {
 		if (ds != null) {
 			ds.execute();
 		}
-		Memory.localMemory.push(new HashMap<String, Core>());
+		Memory.localMemory.push(new HashMap<String, CoreType>());
 		ss.execute();
 		Memory.localMemory.pop();
 

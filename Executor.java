@@ -5,8 +5,8 @@ public class Executor {
     public static Scanner scanner;
 
     static void initializeMemory() {
-        Memory.globalMemory = new HashMap<String, Core>();
-        Memory.localMemory = new Stack<HashMap<String, Core>>();
+        Memory.globalMemory = new HashMap<String, CoreType>();
+        Memory.localMemory = new Stack<HashMap<String, CoreType>>();
         Memory.heapMemory = new ArrayList<Integer>();
     }
 

@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Stack;
 
 public class Memory {
-    static HashMap<String, Core> globalMemory;
-    static Stack<HashMap<String, Core>> localMemory;
+    static HashMap<String, CoreType> globalMemory;
+    static Stack<HashMap<String, CoreType>> localMemory;
     static ArrayList<Integer> heapMemory;
 }
