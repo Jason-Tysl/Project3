@@ -10,4 +10,10 @@ class Id {
 	void print() {
 		System.out.print(identifier);
 	}
+
+    public void executeInteger() {
+    }
+
+    public void executeRecord() {
+    }
 }

@@ -18,4 +18,8 @@ class DeclRecord {
 		id.print();
 		System.out.println(";");
 	}
+
+    public void execute() {
+		id.executeRecord();
+    }
 }

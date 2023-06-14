@@ -19,5 +19,9 @@ class DeclSeq {
 	}
 
     public void execute() {
+		decl.execute();
+		if (ds != null) {
+			ds.execute();
+		}
     }
 }
