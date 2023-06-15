@@ -32,7 +32,7 @@ class StmtSeq {
 	}
 
     public void execute() {
-		// stmt.execute();
+		stmt.execute();
 		if (ss != null) {
 			ss.execute();
 		}

@@ -40,4 +40,8 @@ class Cond {
 			}
 		}
 	}
+
+    public boolean execute() {
+        return false;
+    }
 }

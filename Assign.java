@@ -77,6 +77,17 @@ class Assign implements Stmt {
 	}
 
 	public void execute() {
-		
+		//TODO: FIGURE THIS OUT
+		if (type == 1) {
+			index.print();
+		}
+		System.out.print(":=");
+		if (type == 0 || type == 1) {
+			expr.print();
+		} else if (type == 2) {
+			index.print();
+		} else if (type == 3) {
+			assignFrom.print();
+		}
 	}
 }

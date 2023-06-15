@@ -24,6 +24,6 @@ class Output implements Stmt {
 	}
 
 	public void execute() {
-		
+		expr.execute();
 	}
 }

@@ -44,6 +44,12 @@ class If implements Stmt {
 	}
 	
 	public void execute() {
-		
+		// create new local space to allow for the statement sequence
+		Memory.localMemory.push(new HashMap<String, CoreType>());
+		ss1.execute();
+		if (ss2 != null) {
+			ss2.execute();
+		}
+		Memory.localMemory.pop();
 	}
 }
