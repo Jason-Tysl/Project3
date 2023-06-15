@@ -75,4 +75,8 @@ class Assign implements Stmt {
 		}
 		System.out.println(";");
 	}
+
+	public void execute() {
+		
+	}
 }

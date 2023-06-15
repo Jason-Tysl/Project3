@@ -42,4 +42,8 @@ class If implements Stmt {
 		}
 		System.out.println("end");
 	}
+	
+	public void execute() {
+		
+	}
 }

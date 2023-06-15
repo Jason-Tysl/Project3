@@ -29,4 +29,8 @@ class Loop implements Stmt {
 		}
 		System.out.println("end");
 	}
+	
+	public void execute() {
+		
+	}
 }
