@@ -31,10 +31,13 @@ class Loop implements Stmt {
 	}
 	
 	public void execute() {
-		cond.execute();
-		// create new local space to allow for the statement sequence
-		Memory.localMemory.push(new HashMap<String, CoreType>());
-		ss.execute();
-		Memory.localMemory.pop();
+		// loop while the real condition is true
+		boolean realCondition = cond.execute();
+		while (realCondition) {
+			// create new local space to allow for the statement sequence
+			Memory.localMemory.push(new HashMap<String, CoreType>());
+			ss.execute();
+			Memory.localMemory.pop();
+		}
 	}
 }

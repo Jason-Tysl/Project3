@@ -29,6 +29,8 @@ class Expr {
 		}
 	}
 
-    public void execute() {
+    public int execute() {
+		
+		return option;
     }
 }

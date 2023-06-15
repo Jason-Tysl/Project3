@@ -44,10 +44,15 @@ class If implements Stmt {
 	}
 	
 	public void execute() {
+		boolean realCondition = cond.execute();
 		// create new local space to allow for the statement sequence
 		Memory.localMemory.push(new HashMap<String, CoreType>());
-		ss1.execute();
-		if (ss2 != null) {
+		// only execute if condition passes
+		if (realCondition) {
+			ss1.execute();
+		}
+		// if it doesn't pass and has an else, execute that
+		else if (ss2 != null) {
 			ss2.execute();
 		}
 		Memory.localMemory.pop();
