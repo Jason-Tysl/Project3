@@ -30,7 +30,16 @@ class Expr {
 	}
 
     public int execute() {
+		int result = 0;
+
+		if (option == 1) {
+			result = term.execute() + expr.execute();
+		} else if (option == 2) {
+			result = term.execute() - expr.execute();
+		} else {
+			result = term.execute();
+		}
 		
-		return option;
+		return result;
     }
 }

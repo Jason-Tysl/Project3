@@ -35,13 +35,26 @@ class Cond {
 			cmpr.print();
 			if (cond != null) {
 				if (option == 2) System.out.print(" or ");
-				if (option == 2) System.out.print(" and ");
+				if (option == 3) System.out.print(" and "); //changed option == 2 to option == 3
 				cond.print();
 			}
 		}
 	}
 
     public boolean execute() {
-        return false;
+		boolean result = false;
+		if (cmpr == null) {
+			result = !cond.execute();
+		} else {
+			result = cmpr.execute();
+			if (cond != null) {
+				if (option == 2) {
+					result = cmpr.execute() || cond.execute();
+				} else if (option == 3) {
+					result = cmpr.execute() && cond.execute();
+				}
+			}
+		}
+        return result;
     }
 }

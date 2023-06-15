@@ -31,4 +31,20 @@ class Cmpr {
 		}
 		expr2.print();
 	}
+
+    public boolean execute() {
+        boolean result = false;
+		
+		// compare expr1 and 2 to each other and return the resulting bool 
+		switch(option) {
+			case 0:
+				result = expr1.execute() == expr2.execute();
+				break;
+			case 1:
+				result = expr1.execute() < expr2.execute();
+				break;
+		}
+
+		return result;
+    }
 }

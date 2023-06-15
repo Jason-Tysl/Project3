@@ -28,4 +28,18 @@ class Term {
 			term.print();
 		}
 	}
+
+    public int execute() {
+		int result = 0;
+
+		if (option == 1) {
+			result = factor.execute() * term.execute();
+		} else if (option == 2) {
+			result = factor.execute() / term.execute();
+		} else {
+			result = factor.execute();
+		}
+		
+        return result;
+    }
 }

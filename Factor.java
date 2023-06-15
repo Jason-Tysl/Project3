@@ -57,4 +57,8 @@ class Factor {
 			System.out.print(constant);
 		}
 	}
+
+	public int execute() {
+		return 0;
+	}
 }
