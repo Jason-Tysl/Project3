@@ -10,8 +10,18 @@ public class Executor {
         Memory.heapMemory = new ArrayList<Integer>();
     }
 
+    // read in from the scanner of .data
     public static int readIn() {
-        return 0;
+        int result = 0;
+        if (scanner.currentToken() == Core.EOS) {
+            System.out.println("ERROR: End of inputs.");
+			System.exit(0);
+        } else {
+            result = scanner.getConst();
+            scanner.nextToken();
+        }
+
+        return result;
     }
 
 

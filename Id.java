@@ -13,12 +13,18 @@ class Id {
 
 	// called in DeclInteger.java
     public void executeInteger() {
-		//TODO: FIGURE THIS OUT
+		//TODO: Might be right?
+
+		// allocate memory for the integer
+		Memory.allocate(identifier, Core.INTEGER);
     }
 
 	// called in DeclRecord.java
     public void executeRecord() {
-		//TODO: FIGURE THIS OUT
+		//TODO: Might be right?
+
+		// allocate memory for the record
+		Memory.allocate(identifier, Core.RECORD);
     }
 
 	// called in Assign.java
