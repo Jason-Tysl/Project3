@@ -20,7 +20,7 @@ public class Memory {
             // add the new map to the stack of local memory
             localMemory.add(topHashMap);
         } else {
-            // it's global, initialize the identifier with coretype which gives it a value in the map
+            // it's global, initialize the identifier with coreType which gives it a value in the map
             globalMemory.put(identifier, coreType);
         }
     }
@@ -28,7 +28,7 @@ public class Memory {
 
     public static CoreType findCoreTypeFromId(String identifier) {
         CoreType coreType = null;
-        
+
         return coreType;
     }
 }
