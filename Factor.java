@@ -64,7 +64,7 @@ class Factor {
 		if (id != null) {
 			result = id.getIdVal();
 			if (index != null) {
-				result = id.getIdValArray(index);
+				result = id.getIdValArray(index.execute());
 			}
 		} else if (expr != null) {
 			result = expr.execute();

@@ -73,7 +73,7 @@ class Id {
 				// set to replace null/existing values in heap
 				Memory.heapMemory.set(heapIndex, exprVal);
 			} else {
-				System.out.println("ERROR: attemped accessing " + identifier + "[" + indVal + "]. Out of bounds.");
+				System.out.println("ERROR: Attemped accessing " + identifier + "[" + indVal + "]. Out of bounds.");
 				System.exit(0);
 			}
 		} else {
@@ -104,14 +104,43 @@ class Id {
 	// called in Factor.java
 	public int getIdVal() {
 		int result = 0;
-		
+		CoreType coreType = Memory.findCoreTypeFromId(identifier);
+
+		if (coreType.type == Core.INTEGER) {
+			result = coreType.value;
+		} else if (coreType.type == Core.RECORD) {
+			if (coreType.value < Memory.heapMemory.size()) {
+				result = Memory.heapMemory.get(coreType.value);
+			} else {
+				System.out.println("ERROR: Attemped accessing " + identifier + ". Out of bounds.");
+				System.exit(0);
+			}
+		}
 		return result;
 	}
 
 	// called in Factor.java
-	public int getIdValArray(Expr index) {
+	public int getIdValArray(int indVal) {
 		int result = 0;
-		
+		CoreType coreType = Memory.findCoreTypeFromId(identifier);
+
+		// verify it's a record
+		if (coreType.type == Core.RECORD) {
+			// get index in heap
+			int heapIndex = coreType.value + indVal;
+			// check bounds
+			if (heapIndex < Memory.heapMemory.size()) {
+				// set to replace null/existing values in heap
+				result = Memory.heapMemory.get(heapIndex);
+			} else {
+				System.out.println("ERROR: Attemped accessing " + identifier + "[" + indVal + "]. Out of bounds.");
+				System.exit(0);
+			}
+		} else {
+			System.out.println("ERROR: Treating Integer as array (record).");
+			System.exit(0);
+		}
+
 		return result;
 	}
 }
