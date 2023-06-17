@@ -10,7 +10,7 @@ public class CoreType {
             this.value = 0;
         }
         
-        //"When a record variable is declared, it is initially a null reference."
+        // "When a record variable is declared, it is initially a null reference."
         else if (type == Core.RECORD) {
             this.value = null;
         }

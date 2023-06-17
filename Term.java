@@ -35,7 +35,12 @@ class Term {
 		if (option == 1) {
 			result = factor.execute() * term.execute();
 		} else if (option == 2) {
-			result = factor.execute() / term.execute();
+			int termExec = term.execute();
+			if (termExec == 0) {
+				System.out.println("ERROR: Divide by 0 attempted.");
+				System.exit(0);
+			}
+			result = factor.execute() / termExec;
 		} else {
 			result = factor.execute();
 		}

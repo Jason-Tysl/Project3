@@ -10,5 +10,9 @@ public class Executor {
         Memory.heapMemory = new ArrayList<Integer>();
     }
 
+    public static int readIn() {
+        return 0;
+    }
+
 
 }   

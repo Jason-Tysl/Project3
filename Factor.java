@@ -59,6 +59,21 @@ class Factor {
 	}
 
 	public int execute() {
-		return 0;
+		//TODO: Might be right?
+		int result = 0;
+		if (id != null) {
+			result = id.getIdVal();
+			if (index != null) {
+				result = id.getIdValArray(index);
+			}
+		} else if (expr != null) {
+			result = expr.execute();
+		} else if (input != null) {
+			result = Executor.readIn();
+		} else {
+			result = constant;
+		}
+		
+		return result;
 	}
 }

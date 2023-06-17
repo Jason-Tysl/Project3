@@ -77,17 +77,21 @@ class Assign implements Stmt {
 	}
 
 	public void execute() {
-		//TODO: FIGURE THIS OUT
-		if (type == 1) {
-			index.print();
-		}
-		System.out.print(":=");
-		if (type == 0 || type == 1) {
-			expr.print();
+		//TODO: Might be right?
+
+		// id := <expr> assignment
+		if (type == 0) {
+			assignTo.assignExpr(expr);
+		// id[<expr>] := <expr> assignment
+		} else if (type == 1) {
+			assignTo.assignIndExpr(index, expr);
+		// "new" assignment
 		} else if (type == 2) {
-			index.print();
+			assignTo.assignNew(expr.execute());
+
+		// "record" assignment
 		} else if (type == 3) {
-			assignFrom.print();
+			assignTo.assignRecord(assignFrom);
 		}
 	}
 }
