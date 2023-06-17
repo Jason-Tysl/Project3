@@ -34,17 +34,32 @@ class Id {
 
 	// called in Assign.java
     public void assignNew(int execute) {
+		CoreType coreType = Memory.findCoreTypeFromId(identifier);
+		// add heap space for new record variable
+		Memory.heapMemory.add(null);
+		// set value of reference to the size of the heap
+		coreType.value = Memory.heapMemory.size();
+    }
+
+	// called in Assign.java (id[<expr>] := <expr> assignment)
+    public void assignIndExpr(int indVal, int exprVal) {
 
     }
 
-	// called in Assign.java
-    public void assignIndExpr(Expr index, Expr expr) {
-
-    }
-
-	// called in Assign.java
-    public void assignExpr(Expr expr) {
-
+	// called in Assign.java (id := <expr> assignment)
+    public void assignExpr(int exprVal) {
+		CoreType coreType = Memory.findCoreTypeFromId(identifier);
+		
+		// if the id is an int, simply set the value of the id to the new exprVal
+		if (coreType.type == Core.INTEGER) {
+			coreType.value = exprVal;
+		} else if (coreType.type == Core.RECORD) {
+			// check that you don't go out of bounds
+			if (coreType.value > Memory.heapMemory.size()) {
+				// use set to replace the null value that you initialized earlier
+				Memory.heapMemory.set(coreType.value, exprVal);
+			}
+		}
     }
 
 	// called in Factor.java
@@ -54,6 +69,7 @@ class Id {
 		return result;
 	}
 
+	// called in Factor.java
 	public int getIdValArray(Expr index) {
 		int result = 0;
 		

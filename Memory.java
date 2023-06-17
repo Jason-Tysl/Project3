@@ -24,4 +24,11 @@ public class Memory {
             globalMemory.put(identifier, coreType);
         }
     }
+
+
+    public static CoreType findCoreTypeFromId(String identifier) {
+        CoreType coreType = null;
+        
+        return coreType;
+    }
 }
