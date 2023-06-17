@@ -29,6 +29,18 @@ public class Memory {
     public static CoreType findCoreTypeFromId(String identifier) {
         CoreType coreType = null;
 
+        // search through local memory
+        for (int i = 0; i < localMemory.size(); i++) {
+            if (localMemory.get(i).containsKey(identifier)) {
+                coreType = localMemory.get(i).get(identifier);
+            }
+        }
+
+        // if it hasn't been found, search global memory
+        if (coreType == null) {
+            coreType = globalMemory.get(identifier);
+        }
+
         return coreType;
     }
 }

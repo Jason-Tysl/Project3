@@ -82,9 +82,11 @@ class Assign implements Stmt {
 		// id := <expr> assignment
 		if (type == 0) {
 			assignTo.assignExpr(expr.execute());
+			
 		// id[<expr>] := <expr> assignment
 		} else if (type == 1) {
 			assignTo.assignIndExpr(index.execute(), expr.execute());
+
 		// "new" assignment
 		} else if (type == 2) {
 			assignTo.assignNew(expr.execute());
