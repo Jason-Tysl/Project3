@@ -38,6 +38,9 @@ class Loop implements Stmt {
 			Memory.localMemory.push(new HashMap<String, CoreType>());
 			ss.execute();
 			Memory.localMemory.pop();
+
+			// reset realCondition
+			realCondition = cond.execute();
 		}
 	}
 }

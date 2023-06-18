@@ -55,6 +55,7 @@ class Cond {
 				}
 			}
 		}
+		
         return result;
     }
 }

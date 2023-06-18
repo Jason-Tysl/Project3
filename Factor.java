@@ -62,9 +62,11 @@ class Factor {
 		//TODO: Might be right?
 		int result = 0;
 		if (id != null) {
-			result = id.getIdVal();
+			// if it's an array, get array, otherwise use base
 			if (index != null) {
 				result = id.getIdValArray(index.execute());
+			} else {
+				result = id.getIdVal();
 			}
 		} else if (expr != null) {
 			result = expr.execute();

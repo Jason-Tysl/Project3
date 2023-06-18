@@ -93,10 +93,18 @@ class Id {
 			coreType.value = exprVal;
 		} else if (coreType.type == Core.RECORD) {
 
+			// check that the record was initialized past null
+			if (coreType.value == null) {
+				System.out.println("ERROR: Assignment to null record variable " + identifier + ".");
+				System.exit(0);
+			}
 			// check that you don't go out of bounds
 			if (coreType.value < Memory.heapMemory.size()) {
 				// use set to replace the null value that you initialized earlier
 				Memory.heapMemory.set(coreType.value, exprVal);
+			} else {
+				System.out.println("ERROR: Attemped accessing " + identifier + "[" + coreType.value + "]. Out of bounds.");
+				System.exit(0);
 			}
 		}
     }
