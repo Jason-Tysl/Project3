@@ -41,7 +41,7 @@ Factor.java - this file contains the parsing and executing for the five differen
 
 If.java - this file contains the parsing and executing for the two different productions of <if>.
 
-Index.java - this file contains the parsing and executing for the two different productions of <index>.
+Id.java - this file contains the parsing and executing for the two different productions of <index>.
 
 Loop.java - this file contains the parsing and executing for the <loop>.
 
@@ -52,6 +52,8 @@ Memory.java - this file contains the memory map, stack of maps, and array that g
     functions.
 
 Out.java - this file contains the parsing and executing for the <out>.
+
+Parser.java - the parser of the input file.
 
 Procedure.java - this file contains the parsing and executing for the two productions of <procedure>.
 
